@@ -3,34 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools Links</title>
+    <title>Mohd Hamdillah Ab Rahman's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Poppins', sans-serif;
             background: url('https://images.unsplash.com/photo-1497493292307-31c376b6e479') no-repeat center center fixed;
             background-size: cover;
             color: white;
             text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+            overflow-x: hidden;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #1E90FF;
         }
         .container {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            max-width: 400px;
+            position: relative;
+            z-index: 2;
+            padding: 60px 30px;
+            max-width: 800px;
             width: 100%;
+            margin: 80px auto 0 auto;
             text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             animation: fadeIn 2s ease-in-out;
         }
         h1 {
-            font-size: 28px;
+            font-size: 36px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
             margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
         }
         ul {
             list-style-type: none;
@@ -43,18 +85,40 @@
             text-decoration: none;
             color: #1E90FF;
             font-weight: bold;
-            transition: color 0.3s;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s;
         }
         a:hover {
-            color: #FF4500;
+            color: white;
+            background: #1E90FF;
+            text-shadow: none;
+            transform: scale(1.05);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        .social-icons a {
+            font-size: 24px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="#social">Social Media</a>
+        <a href="#ai-tools">AI Tools</a>
+    </nav>
     <div id="root"></div>
 
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
@@ -63,7 +127,19 @@
 
     <script type="text/babel">
         function App() {
-            const links = [
+            const socialLinks = [
+                { name: "LinkedIn", url: "https://www.linkedin.com/in/your-profile" },
+                { name: "GitHub", url: "https://github.com/your-username" },
+                { name: "Twitter", url: "https://twitter.com/your-username" }
+            ];
+
+            const portfolioItems = [
+                { name: "Project 1", url: "#" },
+                { name: "Project 2", url: "#" },
+                { name: "Project 3", url: "#" }
+            ];
+
+            const aiTools = [
                 { name: "OpenAI", url: "https://www.openai.com/" },
                 { name: "Google AI", url: "https://ai.google/" },
                 { name: "IBM Watson", url: "https://www.ibm.com/watson" },
@@ -72,18 +148,62 @@
             ];
 
             return (
-                <div className="container">
-                    <h1>AI Tools Links</h1>
-                    <ul>
-                        {links.map(link => (
-                            <li key={link.name}>
-                                <a href={link.url} target="_blank" rel="noopener noreferrer">
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <>
+                    <div className="container" id="about">
+                        <h1>Mohd Hamdillah Ab Rahman</h1>
+                        <div className="section">
+                            <h2>About Me</h2>
+                            <p>Hello! I am Mohd Hamdillah Ab Rahman, a front-end web designer with a passion for creating beautiful and functional websites. Welcome to my personal portfolio.</p>
+                        </div>
+                    </div>
+                    <div className="container" id="portfolio">
+                        <div className="section">
+                            <h2>Portfolio</h2>
+                            <ul>
+                                {portfolioItems.map(item => (
+                                    <li key={item.name}>
+                                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                            {item.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="container" id="contact">
+                        <div className="section">
+                            <h2>Contact</h2>
+                            <p>Email: your.email@example.com</p>
+                            <p>Phone: +123-456-7890</p>
+                        </div>
+                    </div>
+                    <div className="container" id="social">
+                        <div className="section">
+                            <h2>Social Media</h2>
+                            <div className="social-icons">
+                                {socialLinks.map(link => (
+                                    <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
+                                        {link.name}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container" id="ai-tools">
+                        <div className="section">
+                            <h2>AI Tools</h2>
+                            <ul>
+                                {aiTools.map(tool => (
+                                    <li key={tool.name}>
+                                        <a href={tool.url} target="_blank" rel="noopener noreferrer">
+                                            {tool.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </>
             );
         }
 
