@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Metadata and Viewport Configuration -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohd Hamdillah Ab Rahman's Portfolio</title>
+    
+    <!-- Google Fonts - Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS Styling -->
     <style>
+        /* General Body Styling */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: url('https://images.unsplash.com/photo-1542551759-dc3394d024d7') no-repeat center center fixed;
+            background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed;
             background-size: cover;
             color: white;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
             overflow-x: hidden;
         }
+
+        /* Overlay Styling */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
-            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
             z-index: 1;
         }
+
+        /* Navigation Bar Styling */
         nav {
             position: fixed;
             top: 0;
@@ -37,6 +50,7 @@
             padding: 15px;
             backdrop-filter: blur(10px);
         }
+
         nav a {
             color: white;
             margin: 0 15px;
@@ -44,9 +58,12 @@
             font-weight: bold;
             transition: color 0.3s;
         }
+
         nav a:hover {
             color: #1E90FF;
         }
+
+        /* Container Styling */
         .container {
             position: relative;
             z-index: 2;
@@ -58,29 +75,35 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             animation: fadeIn 2s ease-in-out;
         }
+
         h1 {
             font-size: 36px;
             margin-bottom: 25px;
             font-weight: 600;
         }
+
         h2 {
             font-size: 24px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
+
         .section {
             margin-bottom: 30px;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             margin-bottom: 15px;
         }
+
         a {
             text-decoration: none;
             color: #1E90FF;
@@ -90,31 +113,45 @@
             border-radius: 10px;
             transition: all 0.3s;
         }
+
         a:hover {
             color: white;
             background: #1E90FF;
             text-shadow: none;
             transform: scale(1.05);
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
+
         .social-icons a {
             font-size: 24px;
             margin: 0 10px;
             transition: transform 0.3s;
         }
+
         .social-icons a:hover {
             transform: scale(1.2);
         }
+
         .fade-in {
             animation: fadeIn 1.5s ease-in-out;
         }
     </style>
 </head>
+
 <body>
+    <!-- Overlay for Background Dim Effect -->
     <div class="overlay"></div>
+
+    <!-- Navigation Bar -->
     <nav>
         <a href="#about">About Me</a>
         <a href="#portfolio">Portfolio</a>
@@ -122,26 +159,33 @@
         <a href="#social">Social Media</a>
         <a href="#ai-tools">AI Tools</a>
     </nav>
+
+    <!-- React Root Element -->
     <div id="root"></div>
 
+    <!-- React and Babel Libraries -->
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <!-- React Component Script -->
     <script type="text/babel">
         function App() {
+            // Social Media Links Data
             const socialLinks = [
-                { name: "LinkedIn", url: "https://www.linkedin.com/in/your-profile" },
-                { name: "GitHub", url: "https://github.com/your-username" },
-                { name: "Twitter", url: "https://twitter.com/your-username" }
+                { name: "LinkedIn", url: "https://www.linkedin.com/in/your-profile", icon: "fab fa-linkedin" },
+                { name: "GitHub", url: "https://github.com/your-username", icon: "fab fa-github" },
+                { name: "Twitter", url: "https://twitter.com/your-username", icon: "fab fa-twitter" }
             ];
 
+            // Portfolio Items Data
             const portfolioItems = [
                 { name: "Project 1", url: "#" },
                 { name: "Project 2", url: "#" },
                 { name: "Project 3", url: "#" }
             ];
 
+            // AI Tools Data
             const aiTools = [
                 { name: "OpenAI", url: "https://www.openai.com/" },
                 { name: "Google AI", url: "https://ai.google/" },
@@ -152,6 +196,7 @@
 
             return (
                 <>
+                    {/* About Me Section */}
                     <div className="container fade-in" id="about">
                         <h1>Mohd Hamdillah Ab Rahman</h1>
                         <div className="section">
@@ -159,6 +204,8 @@
                             <p>Hello! I am Mohd Hamdillah Ab Rahman, a front-end web designer with a passion for creating beautiful and functional websites. Welcome to my personal portfolio.</p>
                         </div>
                     </div>
+
+                    {/* Portfolio Section */}
                     <div className="container fade-in" id="portfolio">
                         <div className="section">
                             <h2>Portfolio</h2>
@@ -173,25 +220,31 @@
                             </ul>
                         </div>
                     </div>
+
+                    {/* Contact Section */}
                     <div className="container fade-in" id="contact">
                         <div className="section">
                             <h2>Contact</h2>
-                            <p>Email: your.email@example.com</p>
+                            <p>Email: papaloza@gmail.com</p>
                             <p>Phone: +123-456-7890</p>
                         </div>
                     </div>
+
+                    {/* Social Media Section */}
                     <div className="container fade-in" id="social">
                         <div className="section">
                             <h2>Social Media</h2>
                             <div className="social-icons">
                                 {socialLinks.map(link => (
-                                    <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
-                                        {link.name}
+                                    <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" title={link.name}>
+                                        <i className={link.icon}></i>
                                     </a>
                                 ))}
                             </div>
                         </div>
                     </div>
+
+                    {/* AI Tools Section */}
                     <div className="container fade-in" id="ai-tools">
                         <div className="section">
                             <h2>AI Tools</h2>
@@ -210,8 +263,11 @@
             );
         }
 
+        // Rendering the React Component
         ReactDOM.render(<App />, document.getElementById('root'));
     </script>
 </body>
+
 </html>
+
 
