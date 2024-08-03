@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Links</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1497493292307-31c376b6e479') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        a {
+            text-decoration: none;
+            color: #1E90FF;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #FF4500;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        function App() {
+            const links = [
+                { name: "OpenAI", url: "https://www.openai.com/" },
+                { name: "Google AI", url: "https://ai.google/" },
+                { name: "IBM Watson", url: "https://www.ibm.com/watson" },
+                { name: "Microsoft AI", url: "https://www.microsoft.com/en-us/ai" },
+                { name: "Amazon AI", url: "https://aws.amazon.com/machine-learning/" }
+            ];
+
+            return (
+                <div className="container">
+                    <h1>AI Tools Links</h1>
+                    <ul>
+                        {links.map(link => (
+                            <li key={link.name}>
+                                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
