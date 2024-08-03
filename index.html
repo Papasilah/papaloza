@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: url('https://images.unsplash.com/photo-1497493292307-31c376b6e479') no-repeat center center fixed;
+            background: url('https://images.unsplash.com/photo-1542551759-dc3394d024d7') no-repeat center center fixed;
             background-size: cover;
             color: white;
             text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
@@ -108,6 +108,9 @@
         .social-icons a:hover {
             transform: scale(1.2);
         }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -149,14 +152,14 @@
 
             return (
                 <>
-                    <div className="container" id="about">
+                    <div className="container fade-in" id="about">
                         <h1>Mohd Hamdillah Ab Rahman</h1>
                         <div className="section">
                             <h2>About Me</h2>
                             <p>Hello! I am Mohd Hamdillah Ab Rahman, a front-end web designer with a passion for creating beautiful and functional websites. Welcome to my personal portfolio.</p>
                         </div>
                     </div>
-                    <div className="container" id="portfolio">
+                    <div className="container fade-in" id="portfolio">
                         <div className="section">
                             <h2>Portfolio</h2>
                             <ul>
@@ -170,14 +173,14 @@
                             </ul>
                         </div>
                     </div>
-                    <div className="container" id="contact">
+                    <div className="container fade-in" id="contact">
                         <div className="section">
                             <h2>Contact</h2>
                             <p>Email: your.email@example.com</p>
                             <p>Phone: +123-456-7890</p>
                         </div>
                     </div>
-                    <div className="container" id="social">
+                    <div className="container fade-in" id="social">
                         <div className="section">
                             <h2>Social Media</h2>
                             <div className="social-icons">
@@ -189,7 +192,7 @@
                             </div>
                         </div>
                     </div>
-                    <div className="container" id="ai-tools">
+                    <div className="container fade-in" id="ai-tools">
                         <div className="section">
                             <h2>AI Tools</h2>
                             <ul>
